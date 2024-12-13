@@ -5,9 +5,9 @@ import useThemeStore from '@/stores/themeStore';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 
-interface HomeProps {}
+interface HomeProps { }
 
-function Home({}: HomeProps) {
+function Home({ }: HomeProps) {
   const theme = useThemeStore(s => s.theme);
   return (
     <SafeAreaView

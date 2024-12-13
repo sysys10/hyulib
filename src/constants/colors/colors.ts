@@ -121,7 +121,7 @@ const dark: ColorProps = {
   border: '#27272C',
   border_focus: '#60A5FA',
   border_error: '#F87171',
-  shadow_color: "#fffff",
+  shadow_color: "#FFFFFF",
 
   // 아이콘 관련
   icon_primary: '#F9FAFB',

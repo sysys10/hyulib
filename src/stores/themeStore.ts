@@ -2,7 +2,7 @@ import { Appearance } from 'react-native';
 import { create } from 'zustand';
 import { storage } from '../mmkv';
 
-type ThemeProp = 'light' | 'dark';
+export type ThemeProp = 'light' | 'dark';
 
 type ThemeStoreProps = {
   theme: ThemeProp;
