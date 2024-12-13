@@ -2,8 +2,6 @@ import React from 'react';
 import { ImageBackground, Platform, StyleSheet } from 'react-native';
 import { Pressable } from 'react-native';
 import CustomText from '../common/CustomText';
-import useThemeStore from '@/stores/themeStore';
-import { useMemo } from 'react';
 import responsive from '@/utils/responsive';
 
 interface CampusCardProps {
@@ -12,9 +10,6 @@ interface CampusCardProps {
   onPress: () => void;
 }
 const CampusCard = ({ image, name, onPress }: CampusCardProps) => {
-  const theme = useThemeStore(s => s.theme);
-  const styles = useMemo(() => customStyle(theme), [theme]);
-
   return (
     <Pressable style={styles.card} onPress={onPress}>
       <ImageBackground
@@ -39,44 +34,42 @@ const CampusCard = ({ image, name, onPress }: CampusCardProps) => {
   );
 };
 
-const customStyle = () => {
-  return StyleSheet.create({
-    backImg: {
-      width: responsive(150),
-      height: responsive(150),
-      borderRadius: responsive(8),
-    },
-    backImgStyle: {
-      height: '100%',
-      opacity: 0.8,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    card: {
-      width: responsive(150),
-      height: responsive(150),
-      borderRadius: responsive(8),
-      overflow: 'hidden',
-      ...Platform.select({
-        ios: {
-          shadowColor: '#3C4043',
-          shadowOffset: {
-            width: 0,
-            height: 2,
-          },
-          shadowOpacity: 0.25,
-          shadowRadius: 8,
+const styles = StyleSheet.create({
+  backImg: {
+    width: responsive(150),
+    height: responsive(150),
+    borderRadius: responsive(8),
+  },
+  backImgStyle: {
+    height: '100%',
+    opacity: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {
+    width: responsive(150),
+    height: responsive(150),
+    borderRadius: responsive(8),
+    overflow: 'hidden',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#3C4043',
+        shadowOffset: {
+          width: 0,
+          height: 2,
         },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-    cardText: {
-      color: 'white',
-      textAlign: 'center',
-    },
-  });
-};
+        shadowOpacity: 0.25,
+        shadowRadius: 8,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
+  },
+  cardText: {
+    color: 'white',
+    textAlign: 'center',
+  },
+});
 
 export default CampusCard;
