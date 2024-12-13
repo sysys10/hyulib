@@ -53,5 +53,9 @@
 		<string>Pretendard-Regular.otf</string>
 		<string>Pretendard-SemiBold.otf</string>
 	</array>
+	 <key>UIAppFonts</key>
+    <array>
+        <string>MaterialIcons.ttf</string>
+    </array>
 </dict>
 </plist>

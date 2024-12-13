@@ -16,7 +16,7 @@ function CustomText({
 
   const customStyle = {
     fontFamily: fontWeights[weight],
-    color: colors[theme][`text_${variant}`],
+    color: variant === 'primary' ? colors[theme].BLACK : colors[theme].GRAY_700,
     ...typography[type],
   };
 

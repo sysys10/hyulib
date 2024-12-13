@@ -11,11 +11,7 @@ export type TextVariant =
   | 'warning'
   | 'error';
 
-export type FontWeight =
-
-  | 'regular'
-  | 'semiBold'
-  | 'bold'
+export type FontWeight = 'regular' | 'semiBold' | 'bold';
 
 export const fontWeights: Record<FontWeight, string> = {
   regular: 'Pretendard-Regular',

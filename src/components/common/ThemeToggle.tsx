@@ -1,24 +1,25 @@
 import { colors } from '@/constants';
 import useThemeStore from '@/stores/themeStore';
+import responsive from '@/utils/responsive';
 import React from 'react';
-import { Switch } from 'react-native';
-
+import { Pressable } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 interface ThemeToggleProps {}
 
 function ThemeToggle({}: ThemeToggleProps) {
   const { theme, setTheme } = useThemeStore();
 
   return (
-    <Switch
-      trackColor={{
-        false: colors[theme].inactive,
-        true: colors[theme].active,
-      }}
-      ios_backgroundColor={colors[theme].active}
-      thumbColor={colors.white}
-      onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      value={theme === 'dark' ? true : false}
-    />
+    <Pressable
+      onPress={() => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+      }}>
+      <Icon
+        name="dark-mode"
+        size={responsive(32)}
+        color={colors[theme].UNCHANGE_WHITE}
+      />
+    </Pressable>
   );
 }
 

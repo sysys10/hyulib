@@ -1,3 +1,5 @@
-export * from './colors/colors';
-export * from './typography/typography';
+export * from './colors';
+export * from './typography';
 export * from './navigation';
+export * from './menu';
+export * from './reservation';

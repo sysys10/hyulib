@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Reserve from '@/screens/Reserve/Reserve';
 import ReservationDetail from '@/screens/Reserve/ReservationDetail';
 
@@ -14,15 +14,15 @@ const Stack = createStackNavigator<ReserveStackParamList>();
 
 const ReserveStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="ReserveMain"
-        options={{title: '그룹 스터디룸'}}
+        options={{ title: '그룹 스터디룸' }}
         component={Reserve}
       />
       <Stack.Screen
         name="ReservationDetail"
-        options={{title: '그룹공간현황', headerBackTitle: ''}}
+        options={{ title: '그룹공간현황', headerBackTitle: '' }}
         component={ReservationDetail}
       />
     </Stack.Navigator>
