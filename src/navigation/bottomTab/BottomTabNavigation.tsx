@@ -4,7 +4,6 @@ import Home from '@/screens/Home';
 import Seats from '@/screens/Seats';
 import Setting from '@/screens/Setting';
 import {
-  BottomTabBarProps,
   BottomTabNavigationProp,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
